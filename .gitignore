@@ -1,3 +1,4 @@
 log/
 config/application.yml
 .idea/
+config/database.yml

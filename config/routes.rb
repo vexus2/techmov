@@ -1,5 +1,7 @@
 StudyMovie::Application.routes.draw do
 
+  get "api/movies"
+
   get "index/index"
   get "index/show"
   get "index/nicovideo"
