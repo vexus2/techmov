@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Omniuser:</b>
+  <%= @mylist_detail.omniuser_id %>
+</p>
+
+<p>
+  <b>Movie:</b>
+  <%= @mylist_detail.movie_id %>
+</p>
+
+<p>
+  <b>Del flg:</b>
+  <%= @mylist_detail.del_flg %>
+</p>
+
+
+<%= link_to 'Edit', edit_mylist_detail_path(@mylist_detail) %> |
+<%= link_to 'Back', mylist_details_path %>

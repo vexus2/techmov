@@ -1,0 +1,29 @@
+<%= form_for(@mylist_detail) do |f| %>
+  <% if @mylist_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mylist_detail.errors.count, "error") %> prohibited this mylist_detail from being saved:</h2>
+
+      <ul>
+      <% @mylist_detail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :omniuser_id %><br />
+    <%= f.number_field :omniuser_id %>
+  </div>
+  <div class="field">
+    <%= f.label :movie_id %><br />
+    <%= f.number_field :movie_id %>
+  </div>
+  <div class="field">
+    <%= f.label :del_flg %><br />
+    <%= f.check_box :del_flg %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

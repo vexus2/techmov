@@ -1,0 +1,27 @@
+<h1>Listing mylist_details</h1>
+
+<table>
+  <tr>
+    <th>Omniuser</th>
+    <th>Movie</th>
+    <th>Del flg</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mylist_details.each do |mylist_detail| %>
+  <tr>
+    <td><%= mylist_detail.omniuser_id %></td>
+    <td><%= mylist_detail.movie_id %></td>
+    <td><%= mylist_detail.del_flg %></td>
+    <td><%= link_to 'Show', mylist_detail %></td>
+    <td><%= link_to 'Edit', edit_mylist_detail_path(mylist_detail) %></td>
+    <td><%= link_to 'Destroy', mylist_detail, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mylist detail', new_mylist_detail_path %>

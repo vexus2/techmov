@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>TechMov
+    ～てくもぶ～</title>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css"/>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="wrapper">
+
+  <ul id="side">
+    <h3>Tags</h3>
+    <% @tags.each do |tag| %>
+        <li>
+          <a href="#" id="<%= tag.id %>" class="menu-click"><%= tag.tag %></a>
+        </li>
+    <% end %>
+  </ul>
+  <div data-role="page" id="page">
+    <div id="header" data-theme="a" data-role="header">
+      <span class="ui-title">TechMov ～てくもぶ～</span>
+      <a data-role="button" class="ui-btn-left btn" href="javascript:void(0);">menu</a>
+
+      <% if current_omniuser %>
+          <%= link_to "マイリスト", "/mylist", "class" => "ui-btn-right", "data-icon" => "star", "data-iconpos" => "notext" %>
+      <% else %>
+          <a id="btn_login" data-rel="external" rel="external" data-role="button" data-transition="slideup" href="/auth/twitter" data-icon="arrow-d" data-iconpos="right" class="ui-btn-right">Login</a>
+      <% end %>
+    </div>
+    <%= yield %>
+  </div>
+
+</div>
+<script>
+    $(function () {
+        $('html,body').animate({ scrollTop:0 }, '1');
+
+        var _onload = true;
+        var index = 10;
+        $.get("/index/show", function (html) {
+            $("ul").trigger('create');
+        });
+        $(window).bottom({proximity:0.05});
+        $(window).on('bottom', function () {
+            _load(index);
+        });
+
+        var side = $('#side');
+        var main = $('#page');
+        var mask = $('#mask');
+        var both = $('#side,#page');
+        $(document).on('click', '.btn', function () {
+            side.css({'visibility':'visible', 'opacity':'1'});
+            both.css({'-webkit-transform':'translate(210px,0)'});
+            main.css({'min-height':'1000px'});
+            main.prepend('<div id="mask"></div>');
+        });
+
+        $(document).on('click', '#mask,#side', function () {
+            side.css({'opacity':'0'});
+            both.css({'-webkit-transform':'translate(0,0)'});
+            side.on('webkitTransitionEnd', function () {
+                side.css({'visibility':'hidden'});
+                side.off('webkitTransitionEnd');
+            });
+            main.css({'min-height':'0'});
+            $('div').remove('#mask');
+        });
+
+        var _load = function (index, tag_id) {
+            var obj = $(this);
+            if (typeof tag_id === "undefined") tag_id = 0;
+            if (!obj.data('loading') && _onload) {
+                obj.data('loading', true);
+                $('#loading').show();
+                $.ajax({
+                    url:"/index/show?index=" + index + "&tag_id=" + tag_id,
+                    cache:false,
+                    success:function (html) {
+                        $('#loading').hide();
+                        obj.data('loading', false);
+                        $("ul").trigger('create');
+                        index += 10;
+                        if (html.indexOf('lastquery') != -1) {
+                            _onload = false;
+                        }
+                    }
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html>

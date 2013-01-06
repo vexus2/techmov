@@ -1,0 +1,158 @@
+a:
+  tag: 勉強会
+  del_flg: 0
+b:
+  tag: node.js
+  del_flg: 0
+c:
+  tag: Ruby
+  del_flg: 0
+d:
+  tag: Rails
+  del_flg: 0
+e:
+  tag: JavaScript
+  del_flg: 0
+h:
+  tag: PHP
+  del_flg: 0
+i:
+  tag: Vim
+  del_flg: 0
+k:
+  tag: Objective-C
+  del_flg: 0
+l:
+  tag: Python
+  del_flg: 0
+m:
+  tag: CoffeeScript
+  del_flg: 0
+n:
+  tag: ShellScript
+  del_flg: 0
+o:
+  tag: Emacs
+  del_flg: 0
+p:
+  tag: C++
+  del_flg: 0
+r:
+  tag: Perl
+  del_flg: 0
+s:
+  tag: git
+  del_flg: 0
+t:
+  tag: Haskell
+  del_flg: 0
+u:
+  tag: jQuery
+  del_flg: 0
+v:
+  tag: HTML5
+  del_flg: 0
+x:
+  tag: Rails
+  del_flg: 0
+y:
+  tag: Github
+  del_flg: 0
+aa:
+  tag: MySQL
+  del_flg: 0
+ab:
+  tag: Node.js
+  del_flg: 0
+ac:
+  tag: Zsh
+  del_flg: 0
+ad:
+  tag: Scala
+  del_flg: 0
+aj:
+  tag: MongoDB
+  del_flg: 0
+am:
+  tag: Xcode
+  del_flg: 0
+ap:
+  tag: Backbone.js
+  del_flg: 0
+ar:
+  tag: Titanium
+  del_flg: 0
+au:
+  tag: heroku
+  del_flg: 0
+av:
+  tag: TDD
+  del_flg: 0
+aw:
+  tag: ActionScript
+  del_flg: 0
+ax:
+  tag: jQueryMobile
+  del_flg: 0
+ay:
+  tag: Rspec
+  del_flg: 0
+az:
+  tag: CakePHP
+  del_flg: 0
+bb:
+  tag: AWS
+  del_flg: 0
+bk:
+  tag: Unity3D
+  del_flg: 0
+bm:
+  tag: hadoop
+  del_flg: 0
+bo:
+  tag: Selenium
+  del_flg: 0
+bt:
+  tag: Jenkins
+  del_flg: 0
+bz:
+  tag: 開発環境
+  del_flg: 0
+ca:
+  tag: PHPUnit
+  del_flg: 0
+cd:
+  tag: Bootstrap
+  del_flg: 0
+cf:
+  tag: CodeIgniter
+  del_flg: 0
+ci:
+  tag: Symfony
+  del_flg: 0
+ck:
+  tag: RubyMotion
+  del_flg: 0
+co:
+  tag: FuelPHP
+  del_flg: 0
+cq:
+  tag: Django
+  del_flg: 0
+cr:
+  tag: PhoneGap
+  del_flg: 0
+cs:
+  tag: Socket.io
+  del_flg: 0
+cu:
+  tag: ZendFramework
+  del_flg: 0
+cy:
+  tag: Coffescript
+  del_flg: 0
+da:
+  tag: cocos2d
+  del_flg: 0
+
+

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <b>Site:</b>
+  <%= @movie.site %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @movie.description %>
+</p>
+
+<p>
+  <b>Thumbnail url:</b>
+  <%= @movie.thumbnail_url %>
+</p>
+
+<p>
+  <b>First retrieve:</b>
+  <%= @movie.first_retrieve %>
+</p>
+
+<p>
+  <b>Length:</b>
+  <%= @movie.length %>
+</p>
+
+<p>
+  <b>Movie size:</b>
+  <%= @movie.movie_size %>
+</p>
+
+<p>
+  <b>View counter:</b>
+  <%= @movie.view_counter %>
+</p>
+
+<p>
+  <b>Embeddable:</b>
+  <%= @movie.embeddable %>
+</p>
+
+<p>
+  <b>:</b>
+  <%= @movie. %>
+</p>
+
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>

@@ -1,0 +1,57 @@
+<%= form_for(@movie) do |f| %>
+  <% if @movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% @movie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :site %><br />
+    <%= f.text_field :site %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :thumbnail_url %><br />
+    <%= f.text_field :thumbnail_url %>
+  </div>
+  <div class="field">
+    <%= f.label :first_retrieve %><br />
+    <%= f.datetime_select :first_retrieve %>
+  </div>
+  <div class="field">
+    <%= f.label :length %><br />
+    <%= f.text_field :length %>
+  </div>
+  <div class="field">
+    <%= f.label :movie_size %><br />
+    <%= f.number_field :movie_size %>
+  </div>
+  <div class="field">
+    <%= f.label :view_counter %><br />
+    <%= f.number_field :view_counter %>
+  </div>
+  <div class="field">
+    <%= f.label :embeddable %><br />
+    <%= f.check_box :embeddable %>
+  </div>
+  <div class="field">
+    <%= f.label : %><br />
+    <%= f.text_field : %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

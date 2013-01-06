@@ -1,0 +1,39 @@
+<h1>Listing movies</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Site</th>
+    <th>Description</th>
+    <th>Thumbnail url</th>
+    <th>First retrieve</th>
+    <th>Length</th>
+    <th>Movie size</th>
+    <th>View counter</th>
+    <th>Embeddable</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @movies.each do |movie| %>
+  <tr>
+    <td><%= movie.title %></td>
+    <td><%= movie.site %></td>
+    <td><%= movie.description %></td>
+    <td><%= movie.thumbnail_url %></td>
+    <td><%= movie.first_retrieve %></td>
+    <td><%= movie.length %></td>
+    <td><%= movie.movie_size %></td>
+    <td><%= movie.view_counter %></td>
+    <td><%= movie.embeddable %></td>
+    <td><%= link_to 'Show', movie %></td>
+    <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+    <td><%= link_to 'Destroy', movie, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Movie', new_movie_path %>

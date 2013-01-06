@@ -1,0 +1,27 @@
+var append_html = '';
+$('#logo_tag').text('<%= @tag_name %>');
+<% if @items.size == 0 %> append_html = '条件に一致する動画が存在しません。'; <% end %>
+var width = Math.floor(0.85*(getBrowserWidth()));
+var height = Math.floor(width * (3/4));
+var i = 1;
+<% @items.each do |item| %>
+append_html += "<li>" +
+        "<div data-role='collapsible-set' id='item<%=item.id %>'>" +
+        "<div data-role='collapsible'>" +
+        <% if @current_omniuser %>"<p><a href='/mylist/add/<%= @current_omniuser.id %>/<%= item.id %>' data-remote='true' id='mylist_add<%= item.id %>'>追加</a></p>" + <% end %>
+//        "<h4><%= item.title %></h4>" +
+        "<h4>動画" + i  + "</h4>" +
+        "<p>再生回数: <%= item.view_counter %></p>" +
+        "<p>コメント数: <%= item.comment_counter %></p>" +
+        "<p>再生時間: <%= item.length %></p>" +
+        "<p>サイト: <%= item.site %></p>" +
+        "</div>" +
+        "</div>" +
+        "<iframe src='/index/nicovideo?key=<%= item.identifier %>&w=" + width + "&h=" + height + "' frameborder='0' scrolling='no' width='" + width + "px' height='" + height + "px'></iframe>"+
+        "</li>";
+        i++;
+<% end %>
+$('#item_list').append(append_html);
+<% if @lastquery %>
+var lastquery = true;
+<% end %>
